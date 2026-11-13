@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>MigrantChild Connect | स्थलांतरित बाल शिक्षण व सुरक्षा</title>
+  <meta name="description" content="Mobile-friendly web app prototype helping migrant worker families find schools, store documents, and protect children in Maharashtra." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Preconnect Google fonts for crisp Devanagari & Latin readability -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Floating Developer / Tester Tools -->
+  <div class="floating-dev-bar">
+    <button class="floating-pill-btn" id="toggleDeviceFrameBtn" title="Toggle between mobile mockup and wide desktop layout">
+      💻 Full Screen
+    </button>
+  </div>
+
+  <!-- Device Frame Wrapper (Mobile Frame or Expanded Desktop) -->
+  <div class="device-wrapper">
+    
+    <!-- App Header Sticky -->
+    <header class="app-header">
+      <div class="header-top-row">
+        <!-- Brand Title -->
+        <div class="brand-section" onclick="app.navigate('home')">
+          <div class="brand-logo-circle">🎒</div>
+          <div class="brand-text">
+            <h1 data-i18n="appTitle">MigrantChild Connect</h1>
+            <p data-i18n="appSubtitle">Education & Protection</p>
+          </div>
+        </div>
+
+        <!-- Header Actions: Language Switcher & Emergency Call -->
+        <div class="header-actions">
+          <div class="lang-switcher">
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn active" data-lang="mr">मराठी</button>
+            <button class="lang-btn" data-lang="hi">हिंदी</button>
+          </div>
+          <button class="emergency-header-btn" id="headerEmergencyBtn">
+            🚨 1098
+          </button>
+        </div>
+      </div>
+
+      <!-- Active Child Profile Bar -->
+      <div class="child-profile-bar" id="activeChildSnippet">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </header>
+
+    <!-- Main Content Area with Virtual Screens -->
+    <main class="main-content">
+      <!-- 1. Login & Registration -->
+      <section id="screen-login" class="app-screen"></section>
+
+      <!-- 2. Home Hub -->
+      <section id="screen-home" class="app-screen active"></section>
+
+      <!-- 3. Smart School Finder -->
+      <section id="screen-schools" class="app-screen"></section>
+
+      <!-- 4. School Details & Admission Guide -->
+      <section id="screen-school-detail" class="app-screen"></section>
+
+      <!-- 5. Document Wallet -->
+      <section id="screen-documents" class="app-screen"></section>
+
+      <!-- 6. Missing-Document Check -->
+      <section id="screen-missing-check" class="app-screen"></section>
+
+      <!-- 7. Admission Application Form -->
+      <section id="screen-admission-form" class="app-screen"></section>
+
+      <!-- 8. Application Status Tracker -->
+      <section id="screen-tracker" class="app-screen"></section>
+
+      <!-- 9. Safe Childcare & Anganwadi Finder -->
+      <section id="screen-childcare" class="app-screen"></section>
+
+      <!-- 10. AI Multilingual Assistant -->
+      <section id="screen-assistant" class="app-screen"></section>
+
+      <!-- 11. Child Protection & Helplines -->
+      <section id="screen-help" class="app-screen"></section>
+
+      <!-- 12. Privacy Policy & Principles -->
+      <section id="screen-privacy" class="app-screen"></section>
+
+      <!-- 13. Admin Dashboard -->
+      <section id="screen-admin" class="app-screen"></section>
+    </main>
+
+    <!-- Bottom Mobile Navigation Bar -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-screen="home">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label" data-i18n="navHome">Home</span>
+      </button>
+      <button class="nav-item" data-screen="schools">
+        <span class="nav-icon">🏫</span>
+        <span class="nav-label" data-i18n="navSchools">Schools</span>
+      </button>
+      <button class="nav-item" data-screen="documents">
+        <span class="nav-icon">📁</span>
+        <span class="nav-label" data-i18n="navDocs">Documents</span>
+      </button>
+      <button class="nav-item" data-screen="childcare">
+        <span class="nav-icon">🧸</span>
+        <span class="nav-label" data-i18n="navChildcare">Childcare</span>
+      </button>
+      <button class="nav-item" data-screen="help">
+        <span class="nav-icon">🛡️</span>
+        <span class="nav-label" data-i18n="navHelp">Protection</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- Reusable Modal Dialog -->
+  <div class="modal-overlay" id="genericModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="genericModalTitle">Information</h3>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body" id="genericModalBody">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/assistant.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
+
